@@ -1,1 +1,1 @@
-web: ng serve --open
+web: node index.js
