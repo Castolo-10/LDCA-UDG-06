@@ -1,8 +1,21 @@
-<h2>Mis héroes</h2>
+<h2>Mis Héroes</h2>
+
+<div>
+  <label>Nombre del Héroe:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    Agregar
+  </button>
+</div>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">X</button>
   </li>
 </ul>
